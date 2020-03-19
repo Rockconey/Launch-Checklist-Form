@@ -12,9 +12,22 @@ window.addEventListener("load", function(){
          event.preventDefault();
       }
 
-      if (isNaN(piName.value) || isNan(coPiName.value)) {
-         
+      if (typeof piName.value !== "string") {
+         alert("Invalid Input.");
+         event.preventDefault();
       }
+
+      // if (Number.isNaN(piName.value)) || (Number.isNaN(coPiName.value)) {
+      //    alert("Invalid Entry.");
+      //    event.preventDefault();
+         
+      // }
+      
+
+      // if (Number.isNaN(fuel) || (Number.isNaN(mass)) {
+      //    alert("Invalid Entry.");
+      //    event.preventDefault();
+      // }
    })
 })
 
