@@ -57,23 +57,15 @@ window.addEventListener("load", function(){
          event.preventDefault();
       }
 
-      if (isNaN(piName.value)) {
-         console.log("Good to go.");
-      } else {
-         alert("Invalid Input.");
-         event.preventDefault();
-      }
+      
 
-      if (isNaN(coPiName.value)) {
-         console.log("Good to go.");
-      } else {
+      if (!isNaN(coPiName.value) || !isNaN(piName.value)) {
          alert("Invalid Input.");
          event.preventDefault();
       } 
-      
 
       if (isNaN(fuel.value) || (isNaN(mass.value))) {
-         alert("Invalid Entry.");
+         alert("Invalid Input.");
          event.preventDefault();
         
       }
@@ -87,10 +79,10 @@ window.addEventListener("load", function(){
          document.getElementById("launchStatus").style.color = "red";
          
          document.getElementById("faultyItems").style.visibility = "visible";
-      } else {
-         document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch.";
-         document.getElementById("launchStatus").style.color = "green";
-         event.preventDefault();
+      // } else {
+      //    document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch.";
+      //    document.getElementById("launchStatus").style.color = "green";
+      //    event.preventDefault();
       }
 
       if (mass.value > 10000) {
@@ -100,10 +92,15 @@ window.addEventListener("load", function(){
          document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch."
          document.getElementById("launchStatus").style.color = "red";
 
-      }else {
+      // }else {
+      //    document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch.";
+      //    document.getElementById("launchStatus").style.color = "green";
+      //    event.preventDefault();
+      }
+
+      if (isNaN(coPiName.value) && isNaN(piName.value) && !isNaN(fuel.value) && !isNaN(mass.value) && fuel.value >=10000 && mass.value <= 10000) {
          document.getElementById("launchStatus").innerHTML = "Shuttle is ready for launch.";
          document.getElementById("launchStatus").style.color = "green";
-         event.preventDefault();
       }
 
       
