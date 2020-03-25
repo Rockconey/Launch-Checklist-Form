@@ -41,6 +41,8 @@ window.addEventListener("load", function(){
          let launchStat = document.getElementById("launchStatus");
          let cargoStat = document.getElementById("cargoStatus")
 
+         
+
       
 
          if (piName.value === "" || coPiName.value === "" || fuel.value === "" || mass.value === "") {
@@ -78,15 +80,16 @@ window.addEventListener("load", function(){
          }
 
          if (isNaN(coPiName.value) && isNaN(piName.value) && !isNaN(fuel.value) && !isNaN(mass.value) && fuel.value >=10000 && mass.value <= 10000) {
-            launchStat.innerHTML = "Shuttle is ready for launch"
+            launchStat.innerHTML = "Shuttle is ready for launch";
             launchStat.style.color = "green";
+            fuelStat.innerHTML = "Fuel level high enough for launch";
+            cargoStat.innerHTML = "Cargo mass low enough for launch";
          }
 
       
 
          readyPilot.innerHTML = (`${piName.value} Ready`);
          readyCoPilot.innerHTML = (`${coPiName.value} Ready`);
-      
       
       
          })
